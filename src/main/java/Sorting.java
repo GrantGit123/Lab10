@@ -16,7 +16,7 @@ import javax.swing.JFrame;
 public class Sorting {
 
     /** Increment to sweep the sort. */
-    private static final int SORT_INCREMENT = 10000;
+    private static final int SORT_INCREMENT = 1000;
 
     /** Total number of values to try. */
     private static final int TOTAL_SORT_VALUES = 100;
@@ -32,7 +32,15 @@ public class Sorting {
      */
     @SuppressWarnings("unused")
     private static int[] bubbleSort(final int[] array) {
-        return null;
+        int temp;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[i - 1]) {
+                temp = array[i];
+                array[i] = array[i - 1];
+                array[i - 1] = temp;
+            }
+        }
+        return array;
     }
 
     /**
